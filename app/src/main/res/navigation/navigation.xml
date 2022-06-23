@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/topFragment">
+
+    <fragment
+        android:id="@+id/topFragment"
+        android:name="com.muhammadiqbal.favanimeapp.ui.top.TopFragment"
+        android:label="TopAnime"
+        tools:layout="@layout/fragment_top">
+
+        <action
+            android:id="@+id/action_topFragment_to_detailActivity"
+            app:destination="@id/detailActivity" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/searchedFragment"
+        android:name="com.muhammadiqbal.favanimeapp.ui.searched.SearchedFragment"
+        android:label="SearcherAnime"
+        tools:layout="@layout/fragment_searched">
+        <action
+            android:id="@+id/action_searchedFragment_to_detailActivity"
+            app:destination="@id/detailActivity"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.muhammadiqbal.favanimeapp.ui.favorite.FavoriteFragment"
+        android:label="FavoriteAnime">
+        <action
+            android:id="@+id/action_favoriteFragment_to_detailActivity"
+            app:destination="@id/detailActivity"/>
+
+    </fragment>
+    <activity
+        android:id="@+id/detailActivity"
+        android:name="com.muhammadiqbal.favanimeapp.ui.detail.DetailActivity"
+        android:label="DetailActivity" >
+        <argument
+            android:name="malId"
+            app:argType="integer" />
+    </activity>
+</navigation>
